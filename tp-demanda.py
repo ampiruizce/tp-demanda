@@ -6,6 +6,7 @@ import streamlit as st
 # TÍTULO
 # -------------------------------
 st.title("📊 Función de Demanda Interactiva")
+st.caption("Aplicación interactiva para visualizar cambios en la función de demanda.")
 
 st.markdown("Ajuste los parámetros para analizar cómo cambian la pendiente y la ordenada al origen de la curva de demanda.")
 
@@ -36,7 +37,8 @@ ax.plot(Q, P, color="#2E8B57", linewidth=3, label="Curva de Demanda")
 if b != 0:
     P_corte = a / b
     if 0 <= P_corte <= 50:
-        ax.scatter(0, P_corte, color="red", zorder=5, label="Punto de corte")
+        ax.scatter(0, P_corte, color="red", zorder=5)
+        ax.text(0, P_corte, f"  ({P_corte:.1f})", color="red")
 
 # -------------------------------
 # ESTÉTICA
